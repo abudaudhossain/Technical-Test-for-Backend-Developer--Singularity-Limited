@@ -121,12 +121,12 @@ const adminJWT = "JWT";
       });
 
 ```
+
 2. Create New Editor Account:
 
- *** only for admin api
 
 ```
-  *** only for admin api
+ only for admin api
   const userAccount = {
     "name": "abu Admin",
     "email":"abu@admin.com",
@@ -150,10 +150,87 @@ const adminJWT = "JWT";
 
 ```
 
+3. Get all Editor Account:
 
-## Newspaper Server API List : 
+
+```
+ only for admin api
+  
+  axios.get(`${baseUrl}/create/editors`,{
+      headers: {
+        'devicetoken': `device-token`,
+        'userToken' :`${userToken}`,
+        'sessionToken' :`${sessionToken}`,
+      }
+    })
+    .then(function (response) {
+      console.lot(response)
+      })
+    .catch(function (error) {
+      console.log(error)
+      });
+
+```
+4. Create New Editor Account:
+
+
+```
+ only for admin api
+  const account = {
+    "editorToken":`${editorToken} 
+}
+  axios.post(`${baseUrl}/create/removeEditor`, account,{
+      headers: {
+        'devicetoken': `device-token`,
+        'userToken' :`${userToken}`,
+        'sessionToken' :`${sessionToken}`,
+      }
+    })
+    .then(function (response) {
+      console.lot(response)
+      })
+    .catch(function (error) {
+      console.log(error)
+      });
+
+```
+5. Create New Article:
+
+
+```
+
+  const article = {
+    "title":"This is Title 2", 
+    "description":"I am writing this request requestdays leave. The reason I have a week off is because I have a lot of personal problems and family problems. These problems need to be addressed.",
+    "category":"Progrmaing",
+    "image": "src/img/muimg.jpg",
+    "tags":["c++","Java"]
+}
+  axios.post(`${baseUrl}/create/removeEditor`, account,{
+      headers: {
+        'devicetoken': `device-token`,
+        'userToken' :`${userToken}`,
+        'sessionToken' :`${sessionToken}`,
+      }
+    })
+    .then(function (response) {
+      console.lot(response)
+      })
+    .catch(function (error) {
+      console.log(error)
+      });
+
+```
+
+
+## Newspaper Server Admin API List : 
 ``
- 1. Get All editor api: ${baseUrl}/editors
+ 1. Editor Status Change  api: ${baseUrl}/changeStatus
+
+```
+## Newspaper Server Get All Article API List : 
+``
+ 1. api: ${baseUrl}/articles
 
 ```
 
