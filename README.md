@@ -171,7 +171,7 @@ const adminJWT = "JWT";
       });
 
 ```
-4. Create New Editor Account:
+4. Remove or Delete Editor Account:
 
 
 ```
@@ -224,12 +224,12 @@ const adminJWT = "JWT";
 
 
 ## Newspaper Server Admin API List : 
-``
+```
  1. Editor Status Change  api: ${baseUrl}/changeStatus
 
 ```
 ## Newspaper Server Get All Article API List : 
-``
+```
  1. api: ${baseUrl}/articles
 
 ```
@@ -242,32 +242,47 @@ github/hope-ui-admin-dashboard/
 NEWSPAPER_SERVER
   ├── App
   │    ├── controllers
-  │    │    ├── authentication.js
-  │    │    ├── service.js
-  │    │    └── welcome.js
+  │    │    ├── article.js
+  │    │    ├── user.js
+  │    │    └── userAuth.js
   │    ├── exceptions
   │    │    ├── handlers.js
   │    │    ├── NotAcceptableError.js
   │    │    ├── NotFountError.js
   │    │    ├── UnauthorizedError.js
   │    │    └── ValidationError.js
-  │    ├── helpers
-  │    │    ├── validation
-  │    │    │    └──helper.js    
-  │    │    ├── nativeResponse.js
+  │    ├── helpers    
+  │    │    ├── setters.js
   │    │    └── utils.js
   │    ├── middleware  
-  │    │    ├── adminAuthMiddleware.js
-  │    │    └── userAuthMiddleware.js
+  │    │    └── validUserRequestMiddleware.js
   │    ├── models  
+  │    │    ├── article.js
   │    │    ├── authSession.js
   │    │    ├── category.js
-  │    │    ├── features.js
-  │    │    ├── orders.js
-  │    │    ├── products.js
-  │    │    └── userProfile.js
+  │    │    ├── comment.js
+  │    │    ├── tag.js
+  │    │    └── user.js
   │    ├── services  
-  │    │    └── createAuthSession.js
+  │    │    ├── article.js
+  │    │    ├── changeEditorStatus.js
+  │    │    ├── createNewSession.js
+  │    │    ├── removeEditorAccount.js
+  │    │    ├── updateStatus.js
+  │    │    └── userAccount.js
+  │    ├── validations
+  │    │    ├── AuthValidation
+  │    │    │    └── loginAuthValidation.js
+  │    │    ├── request
+  │    │    │    ├── addNewArticleRequestValidation.js
+  │    │    │    ├── changeEditorStatusRequestValidation.js
+  │    │    │    ├── createEditorRequestValidation.js
+  │    │    │    ├── findAllEditorRequestValidation.js
+  │    │    │    ├── loginRequestValidation.js
+  │    │    │    └── removeEditorRequestValidation.js
+  │    │    ├── ServiceValidation
+  │    │    └── ValidationHelpers
+  │    │    │    └──ValidationHelper.js
   ├── routes
   │    └── api.js
   ├── .env
