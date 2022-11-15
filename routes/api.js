@@ -14,14 +14,14 @@ router.get("/", (req, res) => {
 });
 
 router.post('/create/Admin', user.createAdmin) // create new Admin
-router.post('/create/Editor', validUserRequestMiddleware,user.createEditor) // create new account
 router.post("/login", userAuth.login); // login validation
+router.post('/create/Editor', validUserRequestMiddleware, user.createEditor) // create new account
 
-router.post("/removeEditor", user.removeEditor); // remove editor
-router.post("/changeStatus", user.changeStatus); // remove editor
-router.get("/editors", user.getAllEditor); // find all editor
+router.post("/removeEditor", validUserRequestMiddleware, user.removeEditor); // remove editor
+router.post("/changeStatus", validUserRequestMiddleware, user.changeStatus); // remove editor
+router.get("/editors", validUserRequestMiddleware, user.getAllEditor); // find all editor
 
-router.post("/createArticle", article.addNewArticle)
+router.post("/createArticle", validUserRequestMiddleware, article.addNewArticle)
 router.get("/articles", article.getAllArticle)
 
 module.exports = router;

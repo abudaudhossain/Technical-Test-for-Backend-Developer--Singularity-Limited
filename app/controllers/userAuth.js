@@ -8,10 +8,10 @@ module.exports = {
     login: async (req, res) => {
         try {
 
-            // request data validation
+            // // request data validation
             loginRequestValidation(req);
 
-            // ==> account password validation
+            // // ==> account password validation
             const accountInfo = await loginAuthValidation(req.body)
 
             // set body account token and create new session
@@ -25,8 +25,7 @@ module.exports = {
 
             // ==> jwt token add
             accountInfo.data.jwtToken = getJwtToken(accountInfo.data.AccountNo, accountInfo.data.sessionToken)
-            console.log("accountAuth l27 :", accountInfo);
-
+            
 
 
             // ==> send to response

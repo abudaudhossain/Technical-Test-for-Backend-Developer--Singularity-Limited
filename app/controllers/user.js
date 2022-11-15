@@ -22,7 +22,7 @@ module.exports = {
 
             await validationHelper.accountExists(req.body.email)
 
-            const account = await userAccount.createNewAccount(req.body);
+            const account = await userAccount.createAdminNewAccount(req.body);
 
             nativeResponse(account[0], "Create a new account", res)
 

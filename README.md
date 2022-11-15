@@ -123,7 +123,10 @@ const adminJWT = "JWT";
 ```
 2. Create New Editor Account:
 
+ *** only for admin api
+
 ```
+  *** only for admin api
   const userAccount = {
     "name": "abu Admin",
     "email":"abu@admin.com",
@@ -147,26 +150,10 @@ const adminJWT = "JWT";
 
 ```
 
-2. Update user Profile:
-
-```
-  axios.post(`${baseUrl}/user/updateProfile`, userProfileData, {
-      headers: {
-        'authorization': `Bearer ${userJWT}`
-      }
-    })
-    .then(function (response) {
-      console.lot(response)
-      })
-    .catch(function (error) {
-      console.log(error)
-      });
-
-```
 
 ## Newspaper Server API List : 
-```
-
+``
+ 1. Get All editor api: ${baseUrl}/editors
 
 ```
 
@@ -175,7 +162,7 @@ Within the download you'll find the following directories and files, logically g
 ```
 github/hope-ui-admin-dashboard/
 
-EHKIT_SERVER
+NEWSPAPER_SERVER
   ├── App
   │    ├── controllers
   │    │    ├── authentication.js

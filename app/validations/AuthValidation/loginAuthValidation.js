@@ -6,10 +6,10 @@ const AppAccount = require("../../models/user"); // model
 
 
 module.exports = async (data) => {
-
     // ==> get account in database
     const accountInfo = await AppAccount.findOne({ email: data.email });
-
+    
+    console.log(accountInfo)
     // ==> check account Exists or not
     if (!accountInfo) throw new NotFoundError("Please Create Account Now")
 

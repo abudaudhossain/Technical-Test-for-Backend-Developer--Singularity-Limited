@@ -27,7 +27,7 @@ module.exports = {
         return setters.accountSetter([newAccount]);
     },
     // admin account
-    createNewAccount: async (data) => {
+    createAdminNewAccount: async (data) => {
         const { name, email, image, password, phone } = data;
         const token = utility.getToken("ACC");
 
